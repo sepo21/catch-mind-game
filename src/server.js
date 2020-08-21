@@ -14,4 +14,16 @@ const handleListening = () => {
   console.log(`✅ Server running: http://localhost:${PORT}`);
 };
 
-app.listen(PORT, handleListening());
+const server = app.listen(PORT, handleListening());
+const io = socketIO.listen(server);
+io.on("connection", (socket) => {
+  socket.on("newMessage", ({ message }) => {
+    socket.broadcast.emit("messageNotif", {
+      message,
+      nickname: socket.nickname || "Anon",
+    });
+  });
+  socket.on("setNickname", ({ nickname }) => {
+    socket.nickname = nickname;
+  });
+});
