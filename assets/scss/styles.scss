@@ -1,0 +1,14 @@
+$color: green;
+
+@keyframes sepo {
+  from {
+    color: red;
+  }
+  to {
+    color: yellow;
+  }
+}
+
+body {
+  background-color: $color;
+}
