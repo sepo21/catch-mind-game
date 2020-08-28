@@ -7,6 +7,15 @@ html(lang="en")
         link(rel="stylesheet", href="/styles/styles.css")
         title Catch Mind Game
     body
-        h1 hello
+        .loginBox
+            form#jsLogin
+                input(type="text" placeholder="Whats your nickname")
+        .gameContainer#jsGame 
+            .chat 
+                ul.chat__messages#jsMessages
+                form.chat__form#jsSendMsg
+                    input(placeholder="write a message", type="text")
+        script.
+            window.events = !{events}
         script(src="/socket.io/socket.io.js")
         script(src="/js/main.js")
