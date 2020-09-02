@@ -11,6 +11,7 @@ const events = {
   strokedPath: "strokedPath",
   fill: "fill",
   filled: "filed",
+  playerUpdate: "playerUpdate",
 };
 
 export default events;
